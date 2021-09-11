@@ -7,7 +7,9 @@
 			<!-- 导航栏内容 -->
 			<view class="navbar-content" :style="{height:navBarHeight+'px',width:windowWidth+'px'}">
 				<view class="navbar-search">
-					<view class="navbar-search_icon"></view>
+					<view class="navbar-search_icon">
+						<uni-icons type="search" size="16" color="#999"></uni-icons>
+					</view>
 					<view class="navbar-search_text">uni-app、vue</view>
 				</view>
 			</view>
@@ -78,9 +80,6 @@
 					background-color: #fff;
 
 					.navbar-search_icon {
-						width: 10px;
-						height: 10px;
-						border: 1px red solid;
 						margin-right: 10px;
 					}
 
