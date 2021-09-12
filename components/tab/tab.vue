@@ -2,7 +2,7 @@
 	<view class="tab">
 		<scroll-view class="tab-scroll" scroll-x>
 			<view class="tab-scroll__box">
-				<view v-for="(item, index) in list" :key="index" class="tab-scroll__item">{{item.name}}零零落落零零落落</view>
+				<view v-for="(item, index) in list" :key="index" class="tab-scroll__item">{{item.name}}</view>
 			</view>
 		</scroll-view>
 
@@ -15,17 +15,16 @@
 <script>
 	export default {
 		name: "tab",
+		props: {
+			list: {
+				type: Array,
+				default () {
+					return []
+				}
+			},
+		},
 		data() {
 			return {
-				list: [{
-					name: "语文"
-				}, {
-					name: "数学"
-				}, {
-					name: "英语"
-				}, {
-					name: "数学"
-				}, ]
 			};
 		}
 	}

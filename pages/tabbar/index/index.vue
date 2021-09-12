@@ -3,8 +3,7 @@
 		<!-- 自定义导航栏 -->
 		<navbar></navbar>
 		<!--自定义 tab  -->
-		<tab></tab>
-		<view v-for="item in 100">{{item}}个内容</view>
+		<tab :list="tabList"></tab>
 	</view>
 </template>
 
@@ -12,14 +11,27 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				tabList: [],
 			}
 		},
 		onLoad() {
-
+			this.getLabel();
 		},
 		methods: {
+			getLabel() {
+				// 调用云函数方法
+				uniCloud.callFunction({
+					name: 'get_label'
+				}).then((res) => {
+					const {
+						result
+					} = res;
+					this.tabList = result.data;
+					console.log(1111,this.tabList)
+				})
 
+			}
 		}
 	}
 </script>
